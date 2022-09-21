@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #282c34;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+:root {
+  /* NavBar.module.css   .NavBar */
+  --background-color-page: rgb(9, 88, 215);
+
+  /* NavBar.module.css .searchBar */
+  --borderbottom-color-searchbar: gray;
+
+  /* NavBar.module.css .input */
+  --input-color-text: white;
+  --input-color-placeholder-text: white;
+
+  /* NavBar.module.css .submit  */
+  --submit-background-color: white;
+
+  /* Home.module.css    .header */
+  --text-color-header: white;
+
+  /* @media screen computadora   .cards*/
+  --text-color-cards-pc: white;
+  --text-color-cards-tablet: white;
+  --text-color-cards-phone: white;
+
+  /* DogCards.module.css    .cards*/
+  --border-color-cards: black;
+  --background-color-cards: rgb(84, 84, 84);
+  --background-color-cards-hover: rgb(124, 121, 121);
+
+  /* LandingPage.module.css       .div */
+  --background-color-landing: red;
+
+  /* Paginado.module.css    .list */
+  --background-color-paginado: azure;
+  --text-color-paginado: black;
+  --background-hover-paginado: rgb(28, 75, 116);
+}

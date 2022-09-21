@@ -1,0 +1,18 @@
+.cards{
+    text-decoration: none;
+    border: 5px solid var(--border-color-cards);
+    background-color: var(--background-color-cards);
+    border-radius: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.cards:hover{
+    background-color: var(--background-color-cards-hover);
+    text-decoration: none;
+
+}
+.img{
+    border-radius: 15px;
+    text-decoration: none;
+}
+

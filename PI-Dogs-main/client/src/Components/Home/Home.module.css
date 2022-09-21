@@ -1,0 +1,58 @@
+.logo {
+  width: 30px;
+  height: 30px;
+}
+.refreshButton {
+   background-color: transparent;
+   background-repeat: no-repeat;
+   border: none;
+   cursor: pointer;
+   overflow: hidden;
+   outline: none;
+}
+.header{
+   color: var(--text-color-header);
+}
+@media screen {
+  .cards {
+    color: var(--text-color-cards-pc);
+    display: grid;
+    grid-template-columns: repeat(4, 5fr);
+    gap: 5px;
+    margin: 80px;
+    text-decoration: none;
+    
+  }
+ 
+  
+}
+
+@media screen and (max-width: 1024px) {
+  .cards {
+    color: var(--text-color-cards-tablet);
+    display: grid;
+    grid-template-columns: repeat(3, 5fr);
+    gap: 5px;
+    margin: 60px;
+    text-decoration: none;
+  }
+}
+@media screen and (max-width: 800px) {
+  .cards {
+    color: var(--text-color-cards-tablet);
+    display: grid;
+    grid-template-columns: repeat(2, 5fr);
+    gap: 5px;
+    margin: 30px;
+    text-decoration: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cards {
+    color: var(--text-color-cards-phone);
+    display: grid;
+    grid-template-columns: repeat(1, 5fr);
+    gap: 5px;
+    text-decoration: none;
+  }
+}

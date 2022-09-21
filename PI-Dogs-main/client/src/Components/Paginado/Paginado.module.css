@@ -1,0 +1,19 @@
+.ulist{
+    display:flex;
+    justify-content: center;
+    cursor: pointer;
+    flex-direction: row;
+    gap: 20px;
+}
+.list{
+    display: flex;
+    background-color: azure;
+    gap: 10px;
+    border: 1px solid white;
+    border-radius: 9999px;
+    color: black;
+    padding: 10px;
+}
+.list:hover{
+    background-color: rgb(28, 75, 116);
+}
