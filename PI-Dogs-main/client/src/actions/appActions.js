@@ -1,10 +1,17 @@
 import axios from "axios";
 
-export const GET_ALL_DOGS = "GET_ALL_DOGS";
 export const SET_APP_IS_LOADING = "app/setIsLoading";
+export const GET_ALL_DOGS = "GET_ALL_DOGS";
 export const GET_DOG_DETAIL = "GET_DOG_DETAIL";
-export const CREATE_DOGO = "CREATE_DOGO"
-export const GET_ALL_TEMPS = "GET_ALL_TEMPS"
+export const GET_NAME_DOGS = 'GET_NAME_DOGS';
+export const GET_ALL_TEMPS = "GET_ALL_TEMPS";
+export const FILTER_BY_TEMPS = 'FILTER_BY_TEMPS';
+export const FILTER_BY_WEIGHT = 'FILTER_BY_WEIGHT';
+export const FILTER_DOGS = "FILTER_DOGS";
+export const FILTER_API_DB = 'FILTER_API_DB';
+export const CREATE_DOGO = "CREATE_DOGO";
+
+//Las actions estan compuestas por un identificador y los datos que va a manejar el reducer..
 
 export function setIsLoading(value) {
   return {
@@ -12,7 +19,6 @@ export function setIsLoading(value) {
     payload: value,
   };
 }
-
 export function getDogos() {
   return async function (dispatch) {
      var json = await axios.get("http://localhost:3001/dogs");
@@ -22,14 +28,12 @@ export function getDogos() {
     })
   }
 }
-
-
 export function getDogDetail(id) {
   return async function (dispatch) {
     let json = await axios.get(`http://localhost:3001/dogs/${id}`);
     return dispatch({
       type: GET_DOG_DETAIL,
-      payload: json,
+      payload: json.data,
     });
   };
 }
@@ -42,10 +46,54 @@ export function getTemps() {
     });
   };
 }
+export function getDogsName (name){
+  return async function(dispatch){
+    try{
+      var json = await axios.get(`http://localhost:3001/dogs?name=${name}`);
+      return dispatch({
+        type: GET_NAME_DOGS,
+        payload: json.data
+      })
+    }catch(err){
+      console.log(err)
+    }
 
-
-
-export function createDogo({
+  }
+}
+export function filterBy(payload){
+  return{
+    type: FILTER_DOGS,
+    payload 
+  }
+}
+export function filterByApi_DB(payload){
+  return{
+    type: FILTER_API_DB,
+    payload 
+  }
+}
+export function filterByWeight(payload){
+      return{
+        type: FILTER_BY_WEIGHT,
+        payload
+      }
+    }
+export function filterByTemps(payload){
+  return{
+    type: FILTER_BY_TEMPS,
+    payload
+  }
+}
+export function postDog(payload){
+  return async function(dispatch){
+    const response = await axios.post("http://localhost:3001/dogs/", payload);
+    return dispatch({
+      type: CREATE_DOGO,
+      payload: response
+    });
+  }
+}
+/* export function createDogo({
   name,
   height,
   weight,
@@ -65,4 +113,4 @@ export function createDogo({
             created_in_dogs,
         }
     }
-}
+} */

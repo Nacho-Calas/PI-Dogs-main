@@ -1,10 +1,12 @@
 .NavBar {
   display: flex;
+  background-position: cover;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   height: 100px;
-  background-color: var(--background-color-page)
+  background-color: var(--background-color-Nav);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.208);
  
 }
 .searchBar{
@@ -19,11 +21,11 @@
 }
 .input{
   width: 25vw;
-  background-color: transparent;
+  background-color: var(--background-color-input);
   font-family: sans-serif;
   border: none;
   color: var(--input-color-text);
-  padding: 1px 1rem;
+  padding: 10px 1rem;
   
 }
 .input::placeholder{
@@ -44,9 +46,28 @@
   justify-content: center;
   align-items: center;
   object-fit: fill;
+  padding: 10px;
+  color: var(--color-boton-search-text);
 
 }
 .imglogo {
   width: 90px;
   height: 90px;
 }
+.creaPerro{ 
+  background-color: var(--btn-crear-color);
+  border-radius: 6px;
+  border-width: 0;
+  box-sizing: border-box;
+  color: var(--color-text-button);
+  cursor: pointer;
+  font-size: 100%;
+  height: 44px;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+

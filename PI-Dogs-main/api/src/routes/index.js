@@ -13,8 +13,12 @@ const getApiInfo = async () => {
     return {
       id: dogs.id,
       name: dogs.name,
-      height: dogs.height.metric,
-      weight: dogs.weight.metric,
+      heightMax : dogs.height.metric.split(" - ")[1]? dogs.height.metric.split(" - ")[1]
+      : dogs.height.metric.split(" - ")[0],
+      heightMin : dogs.height.metric.split(" - ")[0],
+      weightMax: dogs.weight.metric.split(" - ")[1] ? dogs.weight.metric.split(" - ")[1]
+      : dogs.weight.metric.split(" - ")[0],
+      weightMin: dogs.weight.metric.split(" - ")[0],
       life_span: dogs.life_span,
       temperament: dogs.temperament,
       origin: dogs.origin,
@@ -105,22 +109,26 @@ router.get("/dogs/:id", async (req, res) => {
 router.post("/dogs", async (req, res) => {
   const {
     name,
-    height,
-    weight,
+    heightMin,
+    weightMin,
+    heightMax,
+    weightMax,
     life_span,
     image,
     temperament,
     created_in_dogs,
   } = req.body;
 
-  if (!name || !height || !weight || !life_span || !image || !temperament) {
+  if (!name || !heightMin || !heightMax || !weightMax || !weightMin || !life_span || !image || !temperament) {
     res.status(404).send("Falta informacion necesaria");
   }
 
   let dogCreated = await Raza.create({
     name,
-    height,
-    weight,
+    heightMin,
+    weightMin,
+    heightMax,
+    weightMax,
     life_span,
     image,
     created_in_dogs,

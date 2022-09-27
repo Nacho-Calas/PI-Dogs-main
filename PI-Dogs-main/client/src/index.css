@@ -1,50 +1,81 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Noto Sans', sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #282c34;
+ 
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 :root {
+  /* Landing Page .section*/
+  --text-color-title-landingpage: #F1FAEE;
+  --text-color-body-landingpage: #F1FAEE;
+  --text-color-button-leters: #F1FAEE;
+  --border-button-color: #F9C04E;
+  --border-button-color-hover: #F1FAEE;
+  --bg-color-button: #F9C04E;
+
   /* NavBar.module.css   .NavBar */
-  --background-color-page: rgb(9, 88, 215);
+  --background-color-Nav: #F9C04E ;
 
-  /* NavBar.module.css .searchBar */
-  --borderbottom-color-searchbar: gray;
+  /* NavBar.module.css  */
+  
+  --color-text-button: #F1FAEE;
+  --btn-crear-color: #E63946;
+  
+  --input-color-placeholder-text: #1D3557;
+  --input-color-text: #1D3557;
+  --background-color-input: #F1FAEE;
+  --borderbottom-color-searchbar: #E63946;
+  --submit-background-color: #E63946;
+  --color-boton-search-text:#F1FAEE;
 
-  /* NavBar.module.css .input */
-  --input-color-text: white;
-  --input-color-placeholder-text: white;
-
-  /* NavBar.module.css .submit  */
-  --submit-background-color: white;
-
-  /* Home.module.css    .header */
-  --text-color-header: white;
+  /* Home.module.css */
+  --refres-background: #F9C04E;
 
   /* @media screen computadora   .cards*/
-  --text-color-cards-pc: white;
-  --text-color-cards-tablet: white;
-  --text-color-cards-phone: white;
+  --text-color-cards-pc: #1D3557;
+  --text-color-cards-tablet: #1D3557;
+  --text-color-cards-phone: #1D3557;
 
   /* DogCards.module.css    .cards*/
-  --border-color-cards: black;
-  --background-color-cards: rgb(84, 84, 84);
-  --background-color-cards-hover: rgb(124, 121, 121);
+  --border-color-cards: none;
+  --background-color-cards: #F1FAEE;
+  --background-color-cards-hover: #9FC5D1;
+  --text-color-card:#1D3557;
+  --background-color-shadow: rgba(17, 17, 17, 0.283);
 
   /* LandingPage.module.css       .div */
-  --background-color-landing: red;
+  --background-color-landing: #CBEEF3;
 
-  /* Paginado.module.css    .list */
-  --background-color-paginado: azure;
-  --text-color-paginado: black;
-  --background-hover-paginado: rgb(28, 75, 116);
+  
+  /* Create Doggggg   .botonVolver */
+  --button-go-back: #1D3557;
+  --button-go-back-letra:#F1FAEE;
+  --title-create-dogs: #1D3557;
+  --title-shadow-color:rgba(128, 128, 128, 0.295);
+  --color-titulos-campos:#1D3557;
+  --color-close-button:#E63946;
+  --color-text-crear:#F1FAEE;
+  --color-background-crear:#E63946;
+  --error-message-color:#E63946;
+  --background-color-box: #F1FAEE;
+
+
+  /* DogDETAILLL    TODO */
+  --background-car-color: #F1FAEE;
+
+/* PAGINADO COLORS */
+/* Paginado.module.css    .list */
+--background-color-paginado: #E63946;
+--text-color-paginado: #F1FAEE;
+--background-hover-paginado: #F9C04E;
+--paginado-border-color: #F1FAEE;
+
+
 }
