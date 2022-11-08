@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d11857af.chunk.css",
+    "main.js": "/static/js/main.d366ee6c.chunk.js",
+    "main.js.map": "/static/js/main.d366ee6c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.08c7ff0c.js",
+    "runtime-main.js.map": "/static/js/runtime-main.08c7ff0c.js.map",
+    "static/css/2.679831fc.chunk.css": "/static/css/2.679831fc.chunk.css",
+    "static/js/2.3faa3d7f.chunk.js": "/static/js/2.3faa3d7f.chunk.js",
+    "static/js/2.3faa3d7f.chunk.js.map": "/static/js/2.3faa3d7f.chunk.js.map",
+    "static/js/3.ed37f69a.chunk.js": "/static/js/3.ed37f69a.chunk.js",
+    "static/js/3.ed37f69a.chunk.js.map": "/static/js/3.ed37f69a.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.679831fc.chunk.css.map": "/static/css/2.679831fc.chunk.css.map",
+    "static/css/main.d11857af.chunk.css.map": "/static/css/main.d11857af.chunk.css.map",
+    "static/js/2.3faa3d7f.chunk.js.LICENSE.txt": "/static/js/2.3faa3d7f.chunk.js.LICENSE.txt",
+    "static/media/Logo.3184f789.png": "/static/media/Logo.3184f789.png",
+    "static/media/LandingPage.module.css": "/static/media/alvan-nee-T-0EW-SEbsE-unsplash.4aef5dcd.jpg",
+    "static/media/DogDetail.module.css": "/static/media/foondos.d343895e.jpg",
+    "static/media/manchi.941cf425.png": "/static/media/manchi.941cf425.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.08c7ff0c.js",
+    "static/css/2.679831fc.chunk.css",
+    "static/js/2.3faa3d7f.chunk.js",
+    "static/css/main.d11857af.chunk.css",
+    "static/js/main.d366ee6c.chunk.js"
+  ]
+}

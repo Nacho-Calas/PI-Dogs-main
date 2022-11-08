@@ -99,7 +99,14 @@ function rootReducer(state = INITIAL_STATE, action) {
       };
     }
     case FILTER_BY_TEMPS: {
-      const copyAllDogs = state.allDogs;
+      const copy = state.dogs;
+      const result = copy.filter((e) => e.temperament.includes(action.payload));
+      return {
+        ...state,
+        dogs: result,
+      };
+    }
+     /*  const copyAllDogs = state.allDogs;
       const filterTemperaments = copyAllDogs.filter((e) => {
         if (typeof e.temperament === "string") {
           return e.temperament.includes(action.payload);
@@ -113,7 +120,7 @@ function rootReducer(state = INITIAL_STATE, action) {
         ...state,
         dogs: filterTemperaments,
       };
-    }
+    } */
     case GET_CLEAN: {
       return {
         ...state,

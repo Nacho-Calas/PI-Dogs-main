@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { postDog, getTemps } from "../../actions/appActions";
+import { postDog, getTemps } from "../../Redux/actions/appActions";
 
 import style from "./CreateDog.module.css";
 //---------------------VALIDACION----------------------------------

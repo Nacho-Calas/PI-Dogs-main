@@ -16,7 +16,7 @@ import {
   filterByWeight,
   filterByApi_DB,
   filterByTemps,
-} from "../../actions/appActions";
+} from "../../Redux/actions/appActions";
 
 //-----AUX DATA-----
 import style from "./Home.module.css";

@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getDogsName, getDogos } from "../../actions/appActions";
+import { getDogsName, getDogos } from "../../Redux/actions/appActions";
 
 import style from "./NavBar.module.css";
 import Logo from "./img/Logo.png";

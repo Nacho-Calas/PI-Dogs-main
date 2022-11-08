@@ -21,25 +21,14 @@ export function setIsLoading(value) {
     payload: value,
   };
 }
-// export function getDogos() {
-//   return async function (dispatch) {
-//      var json = await axios.get("http://localhost:3001/dogs");
-//     return dispatch({
-//       type: GET_ALL_DOGS,
-//       payload: json.data,
-//     })
-//   }
-// }
-
 export function getDogos() {
-  return (dispatch) => {
-    axios
-      .get("http://localhost:3001/dogs")
-      .then((response) => response.data)
-      .then((data) => {
-        dispatch({ type: GET_ALL_DOGS, payload: data });
-      });
-  };
+  return async function (dispatch) {
+     var json = await axios.get("http://localhost:3001/dogs");
+    return dispatch({
+      type: GET_ALL_DOGS,
+      payload: json.data,
+    })
+  }
 }
 
 export function getDogDetail(id) {
@@ -122,14 +111,10 @@ export function getClean() {
 }
 export function deleteDog(id) {
   return async function (dispatch) {
-    try {
-      let json = await axios.delete(`http://localhost:3001/dogs/${id}`);
-      return dispatch({
-        type: GET_DOG_DETAIL,
-        payload: json.data,
-      });
-    } catch (err) {
-      console.log(err);
-    }
+    const response = await axios.delete(`http://localhost:3001/dogs/${id}`);
+    return dispatch({
+      type: DELETE_DOG,
+      payload: response.data,
+    });
   };
 }
