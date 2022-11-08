@@ -117,31 +117,31 @@ __Ruta principal__: debe contener
   - Temperamento  LISTO
   - Peso  LISTO
 - [ ] Botones/O pciones para filtrar por:
-  - Temperamento   
-  - Raza existente (es decir las que vienen de la API) o agregada por nosotros (creadas mediante el form)
+  - Temperamento   LISTO
+  - Raza existente (es decir las que vienen de la API) o agregada por nosotros (creadas mediante el form) LISTO
 - [ ] Botones/Opciones para ordenar tanto ascendentemente como descendentemente las razas de perro por:
-  - Orden alfabético
-  - Peso
+  - Orden alfabético LISTO
+  - Peso LISTO
 - [ ] Paginado para ir buscando y mostrando las siguientes razas, mostrando 8 razas por página.
-
-__IMPORTANTE__: Dentro de la Ruta Principal se deben mostrar tanto las razas de perros traidas desde la API como así también las de la base de datos, pero NO está permitido almacenar en la base de datos las razas de perros de la API sino que solamente se pueden guardar aquellas creadas desde el form.
+LISTO
+__IMPORTANTE__: Dentro de la Ruta Principal se deben mostrar tanto las razas de perros traidas desde la API como así también las de la base de datos, pero NO está permitido almacenar en la base de datos las razas de perros de la API sino que solamente se pueden guardar aquellas creadas desde el form. LISTO
 
 __Ruta de detalle de raza de perro__: debe contener
 
-- [ ] Los campos mostrados en la ruta principal para cada raza (imagen, nombre y temperamento)
-- [ ] Altura
-- [ ] Peso
-- [ ] Años de vida
+- [ ] Los campos mostrados en la ruta principal para cada raza (imagen, nombre y temperamento) LISTO
+- [ ] Altura LISTO
+- [ ] Peso LISTO
+- [ ] Años de vida LISTO
 
 __Ruta de creación de raza de perro__: debe contener
 
 - [ ] Un formulario __controlado con JavaScript__ con los siguientes campos:
-  - Nombre
-  - Altura (Diferenciar entre altura mínima y máxima)
-  - Peso (Diferenciar entre peso mínimo y máximo)
-  - Años de vida
-- [ ] Posibilidad de seleccionar/agregar uno o más temperamentos
-- [ ] Botón/Opción para crear una nueva raza de perro
+  - Nombre LISTO
+  - Altura (Diferenciar entre altura mínima y máxima) LISTO
+  - Peso (Diferenciar entre peso mínimo y máximo) LISTO
+  - Años de vida LISTO
+- [ ] Posibilidad de seleccionar/agregar uno o más temperamentos LISTO
+- [ ] Botón/Opción para crear una nueva raza de perro LISTO
 
 > Es requisito que el formulario de creación esté validado con JavaScript y no sólo con validaciones HTML. Pueden agregar las validaciones que consideren. Por ejemplo: Que el nombre de la raza no pueda contener números o símbolos, que el peso/altura mínimo no pueda ser mayor al máximo y viceversa, etc.
 
@@ -150,14 +150,14 @@ __Ruta de creación de raza de perro__: debe contener
 El modelo de la base de datos deberá tener las siguientes entidades (Aquellas propiedades marcadas con asterísco deben ser obligatorias):
 
 - [ ] Raza con las siguientes propiedades:
-  - ID *
-  - Nombre *
-  - Altura *
-  - Peso *
-  - Años de vida
+  - ID *   LISTO
+  - Nombre *  LISTO
+  - Altura *  LISTO
+  - Peso * LISTO
+  - Años de vida LISTO
 - [ ] Temperamento con las siguientes propiedades:
-  - ID
-  - Nombre
+  - ID  LISTO
+  - Nombre  LISTO
 
 La relación entre ambas entidades debe ser de muchos a muchos ya que una raza de perro puede tener varios "temperamentos" en simultaneo y, a su vez, un "temperamento" puede corresponder a múltiples razas de perro distintas. Por ejemplo la raza `pug` es docil, inteligente y sociable (entre otras). Pero a su vez existen otras razas de perro que también son sociables o inteligentes.
 

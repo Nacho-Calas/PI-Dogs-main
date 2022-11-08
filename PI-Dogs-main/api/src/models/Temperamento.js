@@ -10,9 +10,9 @@ module.exports = (sequelize) => {
     {
       id: {
         type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
-        allowNull:false,
-        primaryKey: true,
+        defaultValue: DataTypes.UUIDV4, //Tipo de Id unico
+        allowNull:false, //Datos que no pueden ser nulos  
+        primaryKey: true, // Seteada como clave primaria
       },
       name: {
         type: DataTypes.STRING,
@@ -22,3 +22,6 @@ module.exports = (sequelize) => {
     { sequelize, modelName: "Temperamento" }
   );
 };
+
+//Model es otra forma de iniciar las base de datos con sequelize, no cambia nada solo el formato
+//Queda como model name Temperamento, averiguar por que desp le agrega "s" --> RESUELTO: Sequelize siempre pluraliza las tablas

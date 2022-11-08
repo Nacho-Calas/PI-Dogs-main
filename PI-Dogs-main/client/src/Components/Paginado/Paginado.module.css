@@ -19,12 +19,9 @@
     cursor: pointer;
     overflow: hidden;
 }
+.ulist --active{
+    background-color: rgb(54, 16, 241);
+}
 .list:hover{
     background-color:var(--background-hover-paginado);
-}
-.list:not(:last-child){
-    border-right: 1px solid var(--var-border-interno);
-}
-.list --active{
-    background-color: red;
 }

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-//Seteo para Links
+//-------LINKS------
 import { Link } from "react-router-dom";
 
-//Importo componentes a renderizar
+//----COMPONENTS----
 import DogCards from "../DogCards/DogCards";
 import Paginado from "../Paginado/Paginado";
 
-//Importo las acciones para usar
+//-----ACTIONS----
 import {
   getDogos,
   getTemps,
@@ -18,11 +18,11 @@ import {
   filterByTemps,
 } from "../../actions/appActions";
 
-//Me importo estilos y imagenes que voy a usar
+//-----AUX DATA-----
 import style from "./Home.module.css";
 import Logo from "./img/reload.png";
 
-//* ///////////////////////////////////////////////////////
+//*--------------------------FUNCTION HOME-------------------------------
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -30,18 +30,18 @@ export default function Home() {
   const temps = useSelector((state) => state.temps);
   
 
-  //* ///////////// PAGINADO ////////////////
-  const [currentPage, setCurrentPage] = useState(1);
-  const [, /* orden */ setOrden] = useState("");
-  const [dogsXPage /* setDogsXPage */] = useState(8);
-  const iLastDog = currentPage * dogsXPage;
-  const iFirstDog = iLastDog - dogsXPage;
-  const currentDogs = dogs.slice(iFirstDog, iLastDog);
+  //*---------------------PAGINADO ---------------------Estados locales..
+  const [currentPage, setCurrentPage] = useState(1); //Inicializo en 1 la pag
+  const [ /* orden */, setOrden] = useState(""); //Arranca vacio seteo en dicha pag luego de hacer dispatch
+  const [dogsXPage, /* setDogsXPage */] = useState(8); //cant de perros x pagina
+  const iLastDog = currentPage * dogsXPage; // index ultimo perro
+  const iFirstDog = iLastDog - dogsXPage; //index primer dog de esa pag
+  const currentDogs = dogs.slice(iFirstDog, iLastDog); //lo que tengo que renderizar
 
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-  //* ///////////////////////////////////////
+  //*--------------------------------------------------------------------
 
   //Es un hook que corre despues de la funcion de renderizado, puede ser disparado con ciertas dependencias
   useEffect(() => {
@@ -52,6 +52,8 @@ export default function Home() {
   /* useEffect(()=>{
   },[]) */
 
+
+//---------------------------Handles-------------------------------------
   //Los handles los utilizo para manejar acciones de botones, filtros y buscadores
   function handleClick(e) {
     e.preventDefault(); //Para que no recarge la pagina
@@ -81,19 +83,19 @@ export default function Home() {
     setCurrentPage(1);
     setOrden(`Ordenado ${e.target.value}`);
   }
-
+//-----------------------------------------------------------------------
   return (
     <div className={style.all}>
 
       
-      {/* --------------------------------------------------------- */}
+      {/* --------------------------BY NAME------------------------- */}
       <div className={style.filters}>
         <select className={style.filters} onChange={(e) => handleFilter(e)}>
           <option hidden>By Name</option>
           <option value="asc">By A-Z</option>
           <option value="desc">By Z-A</option>
         </select>
-        {/* --------------------------------------------------------- */}
+        {/* -----------------------BY TEMP-------------------------- */}
         <select
           className={style.filters}
           defaultValue="temp"
@@ -106,7 +108,7 @@ export default function Home() {
             </option>
           ))}
         </select>
-        {/* --------------------------------------------------------- */}
+        {/* ----------------------BY WEIGHT-------------------------- */}
         <select
           className={style.filters}
           onChange={(e) => handleFilterByWeigth(e)}
@@ -115,7 +117,7 @@ export default function Home() {
           <option value="maxWeight">Max-Min</option>
           <option value="minWeight">Min-Max</option>
         </select>
-        {/* --------------------------------------------------------- */}
+        {/* ----------------------API/DB----------------------------- */}
         <select
           className={style.filters}
           onChange={(e) => handleFilterByApi_DB(e)}
@@ -124,9 +126,9 @@ export default function Home() {
           <option value="api">Api</option>
           <option value="db">DataBase</option>
         </select>
-        {/* --------------------------------------------------------- */}
+        {/* ----------------------RELOAD----------------------------- */}
         <button
-            className={style.refreshButton} //?REFRESH BUTTON
+            className={style.refreshButton}
             onClick={(e) => {
               handleClick(e);
             }}
@@ -135,11 +137,11 @@ export default function Home() {
           </button>
        
       </div>
-      {/* --------------------------------------------------------- */}
+      {/* ----------------------RENDER CARDS------------------------- */}
       <div className={style.cards}>
         {currentDogs?.map(
           (
-            e //CARTA DE LOS PERROS MUESTRA
+            e
           ) => (
             <Link
               style={{ textDecoration: "none", color: "black" }}
@@ -160,7 +162,7 @@ export default function Home() {
           )
         )}
       </div>
-      {/* --------------------------------------------------------- */}
+      {/* ---------------------RENDER PAG---------------------------- */}
       <Paginado dogsXPage={dogsXPage} dogs={dogs.length} paginado={paginado} />
     </div>
   );

@@ -1,32 +1,62 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, /* useState */ } from "react";
 import style from "./DogDetail.module.css";
-import { getDogDetail } from "../../actions/appActions";
+import { getDogDetail, getClean } from "../../actions/appActions";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Dogo from "../Home/img/200w.gif";
+//import loader from "../Home/img/loader.gif"
+
 
 function DogDetail(props) {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); //
   const dogs = useSelector((state) => state.dogsDetail);
-  const [loading, setLoading] = useState(false);
+  //const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    setLoading(true);
-    dispatch(getDogDetail(props.match.params.id));
-    setLoading(false);
+  function handleClickDelete (e){
+    props.created_in_dogs ? 
+    dispatch(deleteDog(e.target.value))
+    : null
+  }
+
+
+
+
+  useEffect(() => { //La idea es que con el use effect cambie el estado local a true como que esta cargando y una vez que el dispatch se ejecute vuelva a pasarlo a false para que deje de renderizar el loading..
+    /* setLoading(true); */
+    dispatch(getDogDetail(props.match.params.id)); //el params.id contiene info de una route correspondiente, params(key o value), isExact(boolean), path, url
+    /* setLoading(false); */
+    return ()=>{dispatch(getClean())}
   }, [dispatch, props.match.params.id]);
 
-  return (
-    <div className={style.buttonYform}>
-      <Link to="/home" style={{ textDecoration: "none", color: "black" }}>
-        <button className={style.buttonBack}>Regresar</button>
-      </Link>
-      <div className={style.card}>
-        <h2 className={style.title}>{dogs.name}</h2>
 
-        {loading ? (
-          <Dogo size={150} loading={loading} />
-        ) : (
+  return (
+    //---------------------------BOTTON REGRESO-------------------------------------------
+   /*  <div>
+    {loading ? (
+      <h1 loading={loading}>Cargando...</h1>
+      ) : ( */
+        <div className={style.buttonYform}>
+        <Link to="/home" style={{ textDecoration: "none", color: "black" }}>
+        <button className={style.buttonBack}>Regresar</button>
+        </Link>
+        {/* //---------------------DETAIL DE PERRO----------------------------------------------- */}
+
+        <button value={props.match.params.id}  handleCkick={(e)=>handleClickDelete(e)}  />
+
+        
+
+
+
+
+
+
+
+
+
+
+        {/* ----------------------------------------------------------------------------------------- */}
+        
+        <div className={style.card}>
+          <h2 className={style.title}>{dogs.name}</h2>
           <div>
             <img
               className={style.img}
@@ -34,10 +64,11 @@ function DogDetail(props) {
               alt="DogIMG"
               width="250px"
               height="250px"
-            />
+              />
             <h4>
               Temperament:{" "}
-              {dogs.temperament || dogs.Temperamentos?.map((e) => e.name + " ")}
+              {dogs.temperament || dogs.Temperamentos?.map((e) => e.name + " ")//Filtro doble ya que temperament viene por api y Temperamentos viene por base de datos
+              }
             </h4>
             <h4>
               Weight Max: {dogs.weightMax} {dogs.weight} kg
@@ -58,9 +89,10 @@ function DogDetail(props) {
                 : dogs.life_span}
             </h4>
           </div>
-        )}
       </div>
     </div>
+        /* )} */
+ /*  </div> */
   );
 }
 

@@ -16,16 +16,16 @@ export default function NavBar() {
     e.preventDefault();
     setName(e.target.value);
   };
-  const handleClick = (e) => {
-    e.preventDefault();
-    dispatch(getDogos(e));
-  };
   const handleInputSubmit = (e) => {
     e.preventDefault();
     dispatch(getDogsName(name));
     setName({
       name: "",
     });
+  };
+  const handleClick = (e) => {
+    e.preventDefault();
+    dispatch(getDogos(e));
   };
 
   return (

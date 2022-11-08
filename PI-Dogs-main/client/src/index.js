@@ -25,4 +25,4 @@ ReactDOM.render(
 
 reportWebVitals();
 
-//Provider viene de redux thunk que me sirve para utilizar el store
+//Provider viene de react-redux que me sirve para utilizar el store
